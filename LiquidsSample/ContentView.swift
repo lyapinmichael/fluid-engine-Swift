@@ -12,16 +12,16 @@ struct ContentView: View {
     let renderer = Renderer()
     
     var body: some View {
-        NavigationView {
+        ZStack(alignment: .top) {
+            MetalKitView(view: renderer)
+
             Button(action: {
                 print("Button pressed!")
             }) {
                 Text("Change Render Mode")
             }
-            
-            MetalKitView(view: renderer)
+            .padding()
         }
-        .frame(minWidth: 700, minHeight: 300)
     }
 }
 
